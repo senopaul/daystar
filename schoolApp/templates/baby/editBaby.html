@@ -1,0 +1,146 @@
+{% extends 'base2.html' %}
+{% block title %}Edit Baby{% endblock %}
+{% block content %}
+
+<div class="flex-auto bg-gray-50  py-12 md:py-16">
+  <form
+    class="mx-auto max-w-[60%] space-y-6 w-full bg-white rounded-lg shadow-lg p-8" action="{% url 'add_baby' %}" method="POST"
+  >
+  {% csrf_token %}
+    <div class="space-y-2 text-center">
+      <h1 class="text-3xl font-bold text-gray-900">Update Baby Records</h1>
+      <p class="text-gray-500">Use this form to update Baby Record.</p>
+    </div>
+    <div class="space-y-4">
+      <div class="grid grid-cols-2 gap-4">
+        <div class="space-y-2">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-900"
+            for="name"
+          >
+            Baby Name
+          </label>
+          <input
+            class="flex h-10 w-full text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-2 border-gray-300 bg-white text-gray-900 rounded-md p-2"
+            id="name"
+            placeholder="Enter the baby's name"
+            required=""
+            name="name" value="{{baby.name}}"
+          />
+        </div>
+        <div class="space-y-2">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-900"
+            for="gender"
+          >
+            Gender
+          </label>
+          <select value ="{{baby.gender}}" class="flex h-10 w-full text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-2 border-gray-300 bg-white text-gray-900 rounded-md p-2" id="gender" required="" name="gender">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="space-y-2">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-900"
+            for="dob"
+            name
+          >
+            Date of Birth
+          </label>
+          <input
+            class="flex h-10 w-full text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-2 border-gray-300 bg-white text-gray-900 rounded-md p-2"
+            id="dob"
+            required=""
+            type="date"
+            name="dob" value="{{baby.dob | date:'Y-m-d'}}"
+          />
+        </div>
+        <div class="space-y-2">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-900"
+            for="location"
+          >
+            Location
+          </label>
+          <input
+            class="flex h-10 w-full text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-2 border-gray-300 bg-white text-gray-900 rounded-md p-2"
+            id="location"
+            placeholder="Enter the baby's location"
+            required=""
+            name="location" value="{{baby.location}}"
+          />
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="space-y-2">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-900"
+            for="parent_name"
+          >
+            Parent Name
+          </label>
+          <input
+            class="flex h-10 w-full text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-2 border-gray-300 bg-white text-gray-900 rounded-md p-2"
+            id="parent_name"
+            placeholder="Enter the parent's name"
+            required=""
+            name="parent_name" value="{{baby.parent_name}}"
+          />
+        </div>
+
+        <div class="space-y-2">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-900"
+            for="baby_number">
+            Baby Number
+          </label>
+          <input
+            class="flex h-10 w-full text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-2 border-gray-300 bg-white text-gray-900 rounded-md p-2"
+            id="baby_number" placeholder="Enter the baby's number" required="" name="baby_number"
+            value="{{baby.baby_number}}" />
+        </div>
+  
+      </div>      
+      
+      <div class="space-y-2">
+        <label
+          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-900"
+          for="sitter"
+        >
+          Sitter
+        </label>
+        <select
+          class="flex h-10 w-full text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-2 border-gray-300 bg-white text-gray-900 rounded-md p-2"
+          id="sitter"
+          required=""
+          name="sitter" 
+        >
+          <option value="">Select Sitter</option>
+          {% for sitter in sitters  %}
+
+        <option value="{{sitter.id}}" {% if baby.Sitter.id == sitter.id %} selected {% endif %}>{{sitter.name}}</option>
+
+          </option>
+
+          {% endfor %}
+
+        </select>
+      </div>
+      <a href="{% url 'add_baby' %}" >
+      <button
+        class="inline-flex items-center justify-center whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 w-full bg-[#6B46C1] hover:bg-[#553C9A] text-white rounded-md py-3 font-bold"
+        type="submit" py-3
+      >
+        Update Baby
+      </button>
+      </a>
+    </div>
+  </form>
+</div>
+{% endblock %}
+
+

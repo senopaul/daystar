@@ -1,0 +1,190 @@
+{% extends 'base2.html' %}
+
+{% block title %}Add Sitter{% endblock %}
+
+{% block content %}
+
+<div class="flex-auto justify-center items-center min-h-[100vh]">
+  <form
+    class="mx-auto max-w-[60%] space-y-6 w-full bg-white rounded-lg shadow-lg p-20"
+    action="/addsitter/"
+    method="POST"
+  >
+    {% csrf_token %}
+    <div class="space-y-2 text-center">
+      <h1 class="text-3xl font-bold text-gray-900">Add New Sitter</h1>
+      <p class="text-gray-500">Fill out the form to add a new Baby Sitter.</p>
+    </div>
+    <div class="space-y-4">
+      <div class="grid grid-cols-2 gap-4">
+        <div class="space-y-2">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-900"
+            for="fullName"
+          >
+            Full Name
+          </label>
+          <input
+            class="flex h-10 w-full text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-2 border-gray-300 bg-white text-gray-900 rounded-md p-2"
+            id="fullName"
+            placeholder="Enter the sitter's full name"
+            required=""
+            name="name"
+          />
+        </div>
+        <div class="space-y-2">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-900"
+            for="location"
+          >
+            Location
+          </label>
+          <input
+            class="flex h-10 w-full text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-2 border-gray-300 bg-white text-gray-900 rounded-md p-2"
+            id="location"
+            placeholder="Enter the sitter's location"
+            required=""
+            name="location"
+          />
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="space-y-2">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-900"
+            for="dob"
+          >
+            Date of Birth
+          </label>
+          <input
+            class="flex h-10 w-full text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-2 border-gray-300 bg-white text-gray-900 rounded-md p-2"
+            id="dob"
+            required=""
+            type="date"
+            name="date_of_birth"
+          />
+        </div>
+        <div class="space-y-2">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-900"
+            for="gender"
+          >
+            Gender
+          </label>
+          <input
+            class="flex h-10 w-full text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-2 border-gray-300 bg-white text-gray-900 rounded-md p-2"
+            id="gender"
+            placeholder="Enter the sitter's gender"
+            required=""
+            name="gender"
+          />
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="space-y-2">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-900"
+            for="religion"
+          >
+            Religion
+          </label>
+          <input
+            class="flex h-10 w-full text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-2 border-gray-300 bg-white text-gray-900 rounded-md p-2"
+            id="religion"
+            placeholder="Enter the sitter's religion"
+            required=""
+            name="religion"
+          />
+        </div>
+        <div class="space-y-2">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-900"
+            for="education"
+          >
+            Education Level
+          </label>
+          <input
+            class="flex h-10 w-full text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-2 border-gray-300 bg-white text-gray-900 rounded-md p-2"
+            id="education"
+            placeholder="Enter the sitter's education level"
+            required=""
+            name="education_level"
+          />
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="space-y-2">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-900"
+            for="sitter_number"
+          >
+            Sitter Number
+          </label>
+          <input
+            class="flex h-10 w-full text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-2 border-gray-300 bg-white text-gray-900 rounded-md p-2"
+            id="sitterNumber"
+            placeholder="Enter the sitter's number"
+            required=""
+            name="sitter_number"
+          />
+        </div>
+        <div class="space-y-2">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-900"
+            for="is_active"
+          >
+            Contact Information
+          </label>
+          <input
+            class="flex h-10 w-full text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-2 border-gray-300 bg-white text-gray-900 rounded-md p-2"
+            id="contact"
+            placeholder="Enter the sitter's contact information"
+            required=""
+            name="contact"
+          />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div class="space-y-2">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-900"
+            for="nin_number"
+          >
+            NIN Number
+          </label>
+          <input
+            class="flex h-10 w-full text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-2 border-gray-300 bg-white text-gray-900 rounded-md p-2"
+            id="nin_number"
+            placeholder="Enter the sitter's NIN"
+            required=""
+            name="nin_number"
+          />
+        </div>
+        <div class="space-y-2">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-gray-900"
+            for="is_active"
+          >
+            Status
+          </label>
+          <input
+            class="flex h-10 w-full text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border-2 border-gray-300 bg-white text-gray-900 rounded-md p-2"
+            id="is_active"
+            placeholder="Enter the sitter's contact information"
+            required=""
+            name="is_active"
+          />
+        </div>
+      </div>
+
+      <button
+        class="inline-flex items-center justify-center whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 w-full bg-[#6B46C1] hover:bg-[#553C9A] text-white rounded-md py-3 mt-4 font-bold"
+        type="submit"
+      >
+        Add Sitter
+      </button>
+    </div>
+  </form>
+</div>
+{% endblock %}

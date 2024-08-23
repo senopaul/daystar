@@ -1,0 +1,230 @@
+{% extends 'base2.html' %}
+
+{% block title %}Doll Sales{% endblock %}
+{% block content %}
+
+<!--
+// v0 by Vercel.
+// https://v0.dev/t/MsQsLJ6Z61X
+-->
+
+<div class="flex flex-col min-h-screen">
+  <header class="flex h-14 lg:h-[60px] items-center gap-4 border-b bg-gray-100/40 px-6">
+    <a class="lg:hidden" href="#">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="h-6 w-6"
+      >
+        <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"></path>
+        <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"></path>
+        <path d="M12 3v6"></path>
+      </svg>
+      <span class="sr-only">Home</span>
+    </a>
+    <div class="w-full flex-1">
+      <form>
+        <div class="relative">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </svg>
+          <input
+            class="flex h-10 rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full bg-white shadow-none appearance-none pl-8 md:w-2/3 lg:w-1/3"
+            placeholder="Search"
+            type="search"
+          />
+        </div>
+      </form>
+    </div>
+    <button
+      class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground rounded-full border border-gray-200 w-8 h-8"
+      type="button"
+      id="radix-:r3k:"
+      aria-haspopup="menu"
+      aria-expanded="false"
+      data-state="closed"
+    >
+      <img
+        src="/placeholder.svg"
+        class="rounded-full"
+        alt="Avatar"
+        style="aspect-ratio: 32 / 32; object-fit: cover;"
+        width="32"
+        height="32"
+      />
+      <span class="sr-only">Toggle user menu</span>
+    </button>
+  </header>
+  <main class="flex-1">
+    <section class="flex flex-col items-center justify-center py-12 md:py-24 lg:py-32">
+      <div class="container px-4 md:px-6 max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div
+          class="rounded-lg border bg-card text-card-foreground shadow-sm col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-1"
+          data-v0-t="card"
+        >
+          <div class="flex flex-col space-y-1.5 p-6 pb-4">
+            <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Dolls Sales</h3>
+            <p class="text-sm text-muted-foreground">Purchase dolls for the babies in your daycare.</p>
+          </div>
+          <div class="p-6">
+            <form class="grid gap-4">
+              <div class="grid grid-cols-4 items-center gap-4">
+                <label
+                  class="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-right font-medium"
+                  for="doll-name"
+                >
+                  Doll Name
+                </label>
+                <input
+                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 col-span-3"
+                  id="doll-name"
+                  placeholder="Enter doll name"
+                />
+              </div>
+              <div class="grid grid-cols-4 items-center gap-4">
+                <label
+                  class="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-right font-medium"
+                  for="doll-quantity"
+                >
+                  Quantity
+                </label>
+                <input
+                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 col-span-3"
+                  id="doll-quantity"
+                  placeholder="Enter quantity"
+                  type="number"
+                />
+              </div>
+              <div class="grid grid-cols-4 items-center gap-4">
+                <label
+                  class="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-right font-medium"
+                  for="doll-price"
+                >
+                  Price
+                </label>
+                <input
+                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 col-span-3"
+                  id="doll-price"
+                  placeholder="Enter price"
+                  type="number"
+                />
+              </div>
+              <div class="grid grid-cols-4 items-center gap-4">
+                <label
+                  class="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-right font-medium"
+                  for="doll-description"
+                >
+                  Description
+                </label>
+                <textarea
+                  class="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 col-span-3"
+                  id="doll-description"
+                  placeholder="Enter doll description"
+                ></textarea>
+              </div>
+              <button class="inline-flex items-center justify-center whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-11 w-full bg-[#4CAF50] hover:bg-[#45a049] text-white font-bold py-2 px-4 rounded">
+                Add to Cart
+              </button>
+            </form>
+          </div>
+        </div>
+        <div
+          class="rounded-lg border bg-card text-card-foreground shadow-sm col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-1"
+          data-v0-t="card"
+        >
+          <div class="flex flex-col space-y-1.5 p-6 pb-4">
+            <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Sold Babies</h3>
+            <p class="text-sm text-muted-foreground">Details of the babies that have been sold.</p>
+          </div>
+          <div class="p-6">
+            <div class="overflow-auto">
+              <div class="relative w-full overflow-auto">
+                <table class="w-full caption-bottom text-sm">
+                  <thead class="[&amp;_tr]:border-b">
+                    <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                      <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
+                        Baby Name
+                      </th>
+                      <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
+                        Quantity
+                      </th>
+                      <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
+                        Price
+                      </th>
+                      <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&amp;:has([role=checkbox])]:pr-0">
+                        Buyer
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="[&amp;_tr:last-child]:border-0">
+                    <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                      <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">Baby Doll 1</td>
+                      <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">5</td>
+                      <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">$10.00</td>
+                      <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">John Doe</td>
+                    </tr>
+                    <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                      <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">Baby Doll 2</td>
+                      <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">3</td>
+                      <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">$12.00</td>
+                      <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">Jane Smith</td>
+                    </tr>
+                    <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                      <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">Baby Doll 3</td>
+                      <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">8</td>
+                      <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">$8.50</td>
+                      <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">Michael Johnson</td>
+                    </tr>
+                    <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                      <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">Baby Doll 4</td>
+                      <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">2</td>
+                      <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">$15.00</td>
+                      <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">Emily Davis</td>
+                    </tr>
+                    <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                      <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">Baby Doll 5</td>
+                      <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">6</td>
+                      <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">$9.75</td>
+                      <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0">David Lee</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+    <p class="text-xs text-gray-500">© 2024 Daycare Procurement. All rights reserved.</p>
+    <nav class="sm:ml-auto flex gap-4 sm:gap-6">
+      <a class="text-xs hover:underline underline-offset-4" href="#">
+        Terms of Service
+      </a>
+      <a class="text-xs hover:underline underline-offset-4" href="#">
+        Privacy
+      </a>
+    </nav>
+  </footer>
+</div>
+{% endblock %}

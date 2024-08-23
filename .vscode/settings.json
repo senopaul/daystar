@@ -1,0 +1,43 @@
+{
+  "cSpell.words": [
+    "addbaby",
+    "addsitter",
+    "Attendace",
+    "attendancelist",
+    "Bunga",
+    "currentpage",
+    "forloop",
+    "inview",
+    "Kabalagla",
+    "Kansanga",
+    "Kibuli",
+    "Muyenga",
+    "Namuwongo",
+    "totalpages"
+  ],
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "peacock.affectDebuggingStatusBar": true,
+  "peacock.affectEditorGroupBorder": true,
+  "peacock.affectPanelBorder": true,
+  "peacock.affectSashHover": true,
+  "peacock.affectSideBarBorder": true,
+  "peacock.affectStatusAndTitleBorders": true,
+  "peacock.keepBadgeColor": true,
+  "peacock.keepForegroundColor": true
+}

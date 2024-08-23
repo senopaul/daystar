@@ -1,0 +1,111 @@
+
+{% extends 'baseLogin.html' %}
+{% load static %}
+{% block content %}
+
+<div class="flex h-screen w-full items-center justify-center bg-[#1F2937] px-4">
+  <div class="w-full max-w-md space-y-6 rounded-lg border-4 border-blue-500 bg-white p-8 shadow-lg">
+    <div class="space-y-2 text-center">
+      <h1 class="text-3xl font-bold tracking-tight text-[#1F2937]">DayStar Day Care Administrator Login</h1>
+      <p class="text-[#1F2937]">Sign in to your account to manage the DayStar Day Care facility.</p>
+    </div>
+    {% for message in messages %}
+    
+      <div class="space-y-2 text-center">
+      <p class="text-red-500">{{message}}</p>
+          
+    {% endfor %}
+
+
+    <form class="space-y-4" action="{% url 'logon' %}" method="POST">
+      {% csrf_token %}
+      <div>
+        <label
+          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 sr-only"
+          for="username"
+        >
+          username
+        </label>
+        <div class="relative">
+          <input
+            class="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 pr-10 bg-[#1F2937] text-white placeholder-gray-400"
+            id="username"
+            placeholder="Enter your username"
+           
+            type="text" name="username"
+          />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
+          >
+            <path d="M22 17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.5C2 7 4 5 6.5 5H18c2.2 0 4 1.8 4 4v8Z"></path>
+            <polyline points="15,9 18,9 18,11"></polyline>
+            <path d="M6.5 5C9 5 11 7 11 9.5V17a2 2 0 0 1-2 2v0"></path>
+            <line x1="6" x2="7" y1="10" y2="10"></line>
+          </svg>
+        </div>
+      </div>   
+
+      <div>
+        <label
+          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 sr-only"
+          for="password"
+        >
+          Password
+        </label>
+        <div class="relative">
+          <input
+            class="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 pr-10 bg-[#1F2937] text-white placeholder-gray-400"
+            id="password"
+            placeholder="Enter your password"
+           
+            type="password" name="password"
+          />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
+          >
+            <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+        </div>
+      </div>
+      <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 w-full bg-blue-500 hover:bg-blue-600 text-white">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="mr-2"
+        >
+          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+          <polyline points="10 17 15 12 10 7"></polyline>
+          <line x1="15" x2="3" y1="12" y2="12"></line>
+        </svg>
+        Sign in
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}

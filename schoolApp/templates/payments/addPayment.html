@@ -1,0 +1,287 @@
+{% extends 'base2.html' %}
+{% block title %}Add Payment{% endblock %}
+{% block content %}
+<div class="flex justify-center items-center h-screen">
+  <div class="w-[60%] bg-white rounded-lg shadow-lg p-8">
+    <div
+      class="rounded-lg border bg-card text-card-foreground shadow-sm"
+      data-v0-t="card"
+    >
+      <div class="flex flex-col space-y-1.5 p-6">
+        <h3
+          class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight"
+        >
+          Pay for Baby
+        </h3>
+        <p class="text-sm text-muted-foreground">Enter your Product details.</p>
+      </div>
+      <div class="p-6 space-y-4">
+        <div class="space-y-2">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            for="baby"
+          >
+            Select Baby
+          </label>
+          <button
+            type="button"
+            role="combobox"
+            aria-controls="radix-:r1t:"
+            aria-expanded="false"
+            aria-autocomplete="none"
+            dir="ltr"
+            data-state="closed"
+            data-placeholder=""
+            class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            <span style="pointer-events: none">Select Baby</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-4 w-4 opacity-50"
+              aria-hidden="true"
+            >
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="space-y-2">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          >
+            Product Method
+          </label>
+          <div
+            role="radiogroup"
+            aria-required="false"
+            dir="ltr"
+            class="flex items-center gap-4"
+            tabindex="0"
+            style="outline: none"
+          >
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex items-center gap-2 cursor-pointer"
+              for="cash"
+            >
+              <button
+                type="button"
+                role="radio"
+                aria-checked="false"
+                data-state="unchecked"
+                value="cash"
+                class="aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                id="cash"
+                tabindex="-1"
+                data-radix-collection-item=""
+              ></button>
+              Cash
+            </label>
+            <label
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 flex items-center gap-2 cursor-pointer"
+              for="mobile-money"
+            >
+              <button
+                type="button"
+                role="radio"
+                aria-checked="false"
+                data-state="unchecked"
+                value="mobile-money"
+                class="aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                id="mobile-money"
+                tabindex="-1"
+                data-radix-collection-item=""
+              ></button>
+              Mobile Money
+            </label>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <label
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            for="amount"
+          >
+            Amount
+          </label>
+          <input
+            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+            id="amount"
+            placeholder="Enter amount"
+            type="number"
+          />
+        </div>
+      </div>
+      <div class="flex items-center p-6">
+        <button
+          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 w-full bg-blue-500 hover:bg-blue-600 text-white"
+        >
+          Pay Now
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+<div class="flex min-h-screen w-full items-center justify-center bg-gray-100 ">
+  <div class="mx-auto w-full max-w-4xl space-y-6 rounded-3xl bg-white p-8 shadow-lg ">
+    <div class="space-y-2 text-center">
+      <h1 class="text-4xl font-bold">New Product</h1>
+      <p class="text-gray-500 text-lg">Enter the Product details for the baby.</p>
+    </div>
+    <form class="space-y-6">
+      <div class="space-y-3">
+        <label
+          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          for="name"
+        >
+          Baby's Name
+        </label>
+        <input
+          class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+          id="name"
+          placeholder="Enter baby's name"
+          required=""
+        />
+      </div>
+      <div class="space-y-3">
+        <label
+          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          for="amount"
+        >
+          Product Amount
+        </label>
+        <input
+          class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+          id="amount"
+          placeholder="Enter Product amount"
+          required=""
+          type="number"
+        />
+      </div>
+      <div class="space-y-3">
+        <label
+          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          for="type"
+        >
+          Product Type
+        </label>
+        <button
+          type="button"
+          role="combobox"
+          aria-controls="radix-:r4t:"
+          aria-expanded="false"
+          aria-required="true"
+          aria-autocomplete="none"
+          dir="ltr"
+          data-state="closed"
+          data-placeholder=""
+          class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          <span style="pointer-events: none;">Select Product type</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4 opacity-50"
+            aria-hidden="true"
+          >
+            <path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </button>
+        <select
+          aria-hidden="true"
+          required=""
+          tabindex="-1"
+          style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; overflow-wrap: normal;"
+        >
+          <option value=""></option>
+          <option value="credit-card">Half Day/option>
+          <option value="debit-card">Full Day</option>
+          <option value="cash">Cash</option>
+          <option value="check">Check</option>
+        </select>
+      </div>
+      <div class="space-y-3">
+        <label
+          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          for="date"
+        >
+          Product Date
+        </label>
+        <input
+          class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+          id="date"
+          required=""
+          type="date"
+        />
+      </div>
+      <div class="space-y-3">
+        <label
+          class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          for="status"
+        >
+          Product Status
+        </label>
+        <button
+          type="button"
+          role="combobox"
+          aria-controls="radix-:r52:"
+          aria-expanded="false"
+          aria-required="true"
+          aria-autocomplete="none"
+          dir="ltr"
+          data-state="closed"
+          data-placeholder=""
+          class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          <span style="pointer-events: none;">Select Product status</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-4 w-4 opacity-50"
+            aria-hidden="true"
+          >
+            <path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </button>
+        <select
+          aria-hidden="true"
+          required=""
+          tabindex="-1"
+          style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; overflow-wrap: normal;"
+        >
+          <option value=""></option>
+          <option value="pending">Pending</option>
+          <option value="paid">Paid</option>
+          <option value="failed">Failed</option>
+        </select>
+      </div>
+      <button
+        class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-successtext-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full"
+        type="submit"
+      >
+        Create Product
+      </button>
+    </form>
+  </div>
+</div> -->
+{% endblock %}

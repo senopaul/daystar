@@ -1,0 +1,65 @@
+{% extends "base2.html" %}
+
+{% block title %}Add Product{% endblock %}
+
+{% block content %}
+
+<div class="flex-auto justify-center items-center min-h-[100vh] p-8">  
+  
+  
+  <div class="flex justify-center items-center h-screen">
+    <div
+      class="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md border-t-4 border-r-4 border-green-500 dark:border-green-400">
+      <div class="flex items-center justify-between mb-6">
+        <h1 class="text-2xl font-bold">Add New Product</h1>
+        <div class="inline-flex items-center space-x-2">
+          <button
+            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+              <path d="M18 6 6 18"></path>
+              <path d="m6 6 12 12"></path>
+            </svg>
+            <span class="sr-only">Close</span>
+          </button>
+        </div>
+      </div>
+      <form class="grid gap-6" method="POST">
+      {% csrf_token %}
+        <div class="grid gap-2">
+          <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base" for="name">
+            Name
+          </label>
+          <input
+            class="flex h-10 w-full bg-background text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 rounded-lg border border-green-500 dark:border-green-400 px-4 py-3 focus:border-green-500 focus:ring-green-500 dark:focus:border-green-400 dark:focus:ring-green-400"
+            id="name" placeholder="Enter product name" name="name"/> 
+        </div>
+        <div class="grid gap-2">
+          <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base"
+            for="description">
+            Description
+          </label>
+          <textarea
+            class="flex w-full bg-background text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 rounded-lg border border-green-500 dark:border-green-400 px-4 py-3 focus:border-green-500 focus:ring-green-500 dark:focus:border-green-400 dark:focus:ring-green-400 min-h-[100px]"
+            id="description" placeholder="Enter product description" name="description"></textarea>
+        </div>
+        <div class="grid gap-2">
+          <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base" for="price">
+            Unit Price
+          </label>
+          <input
+            class="flex h-10 w-full bg-background text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 rounded-lg border border-green-500 dark:border-green-400 px-4 py-3 focus:border-green-500 focus:ring-green-500 dark:focus:border-green-400 dark:focus:ring-green-400"
+            id="price" placeholder="Enter unit price" type="number"  name="unit_price"/>
+        </div>
+        <button type="submit"
+          class="inline-flex items-center justify-center whitespace-nowrap text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-11 rounded-md px-8 w-full bg-green-500 text-white font-semibold hover:bg-green-600 focus:ring-green-500 dark:bg-green-400 dark:text-gray-950 dark:hover:bg-green-500 dark:focus:ring-green-400">
+          Add Product
+        </button>
+
+        
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

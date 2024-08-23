@@ -1,0 +1,53 @@
+{% extends 'base2.html' %}
+{% block title %}View Sitter{% endblock %}
+{% block content %}
+
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="flex items-center justify-between mb-6">
+    <h1 class="text-2xl font-bold">{{ baby.name }}</h1>
+    <div class="flex items-center space-x-4">
+      <a href="/editSitter/{{ sitter.id }}"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</a>
+      <a href="/sitters/{{ sitter.id }}/delete"
+        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</a>
+      <form action="/deleteSitter/{{ sitter.id }}" method="post">
+        {% csrf_token %}
+
+      </form>
+    </div>
+  </div>
+  <div class="overflow-x-auto">
+    <div class="relative w-full overflow-auto">
+      <table class="w-full caption-bottom text-sm">
+        <tbody>
+          <tr>
+            <td class="p-4 align-middle">Baby Name: {{ baby.name }}</td>
+          </tr>
+          <tr>
+            <td class="p-4 align-middle">Gender: {{ baby.gender }}</td>
+          </tr>
+          
+          <tr>
+            <td class="p-4 align-middle">Date of Birth: {{ baby.dob }}</td>
+          </tr>
+
+          <tr>
+            <td class="p-4 align-middle">Location: {{ baby.location }}</td>
+          </tr>         
+          
+          <tr>
+            <td class="p-4 align-middle">Parent Name: {{ baby.parent_name }}</td>
+          </tr>
+          <tr>
+            <td class="p-4 align-middle">Baby Number: {{ baby.baby_number }}</td>
+          </tr>
+          <tr>
+            <td class="p-4 align-middle">Assigned Sitter: {{ baby.sitter.name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
